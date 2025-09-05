@@ -11,6 +11,8 @@ const useFetch = (url) => {
         setTimeout(() => {
             fetch(url, {signal: abortController.signal})
                 .then(res => {
+                    console.log('fetching json', res);
+
                     if (res.ok) {
                         return res.json();
                     } else {
@@ -18,11 +20,14 @@ const useFetch = (url) => {
                     }
                 })
                 .then(data => {
+                    console.log('fetching data', data);
+
                     setData(data)
                     setLoading(false);
                     setError(null);
                 })
                 .catch(err => {
+                    console.log('Error fetching data', err);
                     if (err.name !== 'AbortError') {
                         setError(err.message)
                         setLoading(false);
