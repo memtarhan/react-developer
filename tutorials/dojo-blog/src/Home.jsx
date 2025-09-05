@@ -2,18 +2,23 @@ import {useEffect, useState} from "react";
 import BlogList from "./BlogList.jsx";
 
 const Home = () => {
-
     const [blogs, setBlogs] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8000/blogs")
-            .then(res => res.json())
-            .then(data => setBlogs(data));
+        setTimeout(() => {
+            fetch("http://localhost:8000/blogs")
+                .then(res => res.json())
+                .then(data => {
+                    setBlogs(data)
+                    setLoading(false);
+                });
+        }, 1000)
     }, [])
-
 
     return (
         <div className="home">
+            {loading && <div>Loading...</div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
         </div>
     );
