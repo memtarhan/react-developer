@@ -1,10 +1,12 @@
 import {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Mehmet');
     const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,6 +23,7 @@ const Create = () => {
                 console.log("New blog post was created successfully.");
                 console.log(data)
                 setLoading(false);
+                history.push('/');
             })
             .catch(err => {
                 console.log(err)
@@ -56,7 +59,7 @@ const Create = () => {
 
                 {!loading && <button>Add Blog</button>}
                 {loading && <button disabled>Adding Blog...</button>}
-                
+
             </form>
         </div>
     );
