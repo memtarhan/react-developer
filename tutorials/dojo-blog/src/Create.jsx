@@ -4,10 +4,28 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Mehmet');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         const blog = {title, body, author}
+
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(blog)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("New blog post was created successfully.");
+                console.log(data)
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err)
+                setLoading(false);
+            });
     }
 
     return (
@@ -36,7 +54,9 @@ const Create = () => {
                     <option value="Tuba">Tuba</option>
                 </select>
 
-                <button>Add Blog</button>
+                {!loading && <button>Add Blog</button>}
+                {loading && <button disabled>Adding Blog...</button>}
+                
             </form>
         </div>
     );
