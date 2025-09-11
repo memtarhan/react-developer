@@ -1,0 +1,17 @@
+{
+  "name": "first-react-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/memtarhan/react-developer.git"
+  },
+  "private": true,
+  "dependencies": {
+    "react-dom": "^19.1.1"
+  }
+}
