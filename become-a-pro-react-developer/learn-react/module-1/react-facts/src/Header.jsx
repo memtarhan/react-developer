@@ -2,8 +2,15 @@ import reactLogo from "./assets/react.svg";
 
 const Header = () => {
     return (
-        <header>
-            <img src={reactLogo} className="logo react" alt="React logo"/>
+        <header className="header">
+            <img src={reactLogo} className="header-image" alt="React logo"/>
+            <nav>
+                <ul className="nav-list">
+                    <li className="nav-list-item">Pricing</li>
+                    <li className="nav-list-item">About</li>
+                    <li className="nav-list-item">Contact</li>
+                </ul>
+            </nav>
         </header>
     )
 }
