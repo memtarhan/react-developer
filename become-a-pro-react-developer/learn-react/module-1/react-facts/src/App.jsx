@@ -1,12 +1,11 @@
-import reactLogo from './assets/react.svg'
+import HomePage from "./HomePage.jsx";
 
 function App() {
 
     return (
         <>
             <div>
-                <img src={reactLogo} className="logo react" alt="React logo"/>
-                <h1>React Facts</h1>
+                <HomePage/>
                 <ul>
                     <li>Was first released in 2013</li>
                     <li>Was originally created by Jordan Walker</li>
