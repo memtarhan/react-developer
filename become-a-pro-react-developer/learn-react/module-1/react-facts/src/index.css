@@ -34,6 +34,10 @@ nav > span {
 
 main {
     padding: 60px 30px;
+    background-image: url("./assets/react.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
 }
 
 main > h1 {
