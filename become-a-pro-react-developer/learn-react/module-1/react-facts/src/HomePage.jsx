@@ -1,14 +1,11 @@
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
 import MainContent from "./MainContent.jsx";
-
+import Navbar from "./Navbar.jsx";
 
 const HomePage = () => {
     return (
         <div>
-            <Header/>
+            <Navbar/>
             <MainContent/>
-            <Footer/>
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import HomePage from "./HomePage.jsx";
 
 function App() {
-
     return (
         <>
             <HomePage/>
