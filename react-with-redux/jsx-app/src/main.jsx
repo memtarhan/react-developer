@@ -10,11 +10,18 @@ const root = ReactDOM.createRoot(el);
 
 // 4 - Create a component 
 function App() {
-  let message = 'Bye there!';
-  if (Math.random() > 0.5) {
-    message = 'Hi there!'
-  }
-  return <h1>{message}</h1>;
+  const message = 'Hello';
+  const sum = 1 + 1;
+
+  return (
+  <>
+  <div>
+    <div>Message is: {message}</div>
+    <div>Sum is: {sum}</div>
+    <h3>Date is: {new Date().toLocaleDateString()}</h3>
+  </div>
+  </>
+  );
 }
 
 // 5 - Show the component on the screen 
